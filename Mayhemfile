@@ -1,5 +1,5 @@
 project: rnshah9/libcyaml
-target: libcyaml
+target: planner
 
 cmds:
   - cmd: /repo/build/debug/planner @@ out
