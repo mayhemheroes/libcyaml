@@ -1,4 +1,4 @@
-project: rnshah9/libcyaml
+project: libcyaml
 target: planner
 
 cmds:
