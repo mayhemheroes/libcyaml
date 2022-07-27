@@ -2,4 +2,4 @@ project: libcyaml
 target: planner
 
 cmds:
-  - cmd: /repo/build/debug/planner @@ out
+  - cmd: /planner @@ out
