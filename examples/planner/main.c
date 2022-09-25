@@ -441,6 +441,12 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "ERROR: %s\n", cyaml_strerror(err));
 		return EXIT_FAILURE;
 	}
+	
+	/* Check null. */
+	if (!plan) {
+		fprintf(stderr, "ERROR: cyaml_load_file did not return valid pointer");
+		return EXIT_FAILURE;
+	}
 
 	/* Use the data. */
 	printf("Project: %s\n", plan->name);
