@@ -1,0 +1,5 @@
+project: libcyaml
+target: planner
+
+cmds:
+  - cmd: /planner @@ out
