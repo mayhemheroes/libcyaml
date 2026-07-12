@@ -1,0 +1,10 @@
+project: libcyaml
+target: fuzz_load
+
+cmds:
+  - cmd: /mayhem/build/fuzz_load
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_load/testsuite

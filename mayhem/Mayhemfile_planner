@@ -1,0 +1,9 @@
+project: libcyaml
+target: planner
+
+cmds:
+  - cmd: /mayhem/build/release/planner @@ /tmp/out.yaml
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/planner/testsuite
