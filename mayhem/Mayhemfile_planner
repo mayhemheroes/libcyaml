@@ -1,0 +1,17 @@
+project: libcyaml
+target: planner
+
+# Target name preserved from the original integration (run history stays attached).
+# Was a raw file-input CLI (`build/release/planner @@ /tmp/out.yaml`); its authoritative
+# 300s run completed with 0 edges (Mayhem could not collect coverage from the sanitized
+# raw CLI), so it is converted to an in-process libFuzzer harness (mayhem/fuzz_planner.c)
+# over the SAME code path — the example's own main() is invoked per input, staged via a
+# /tmp file. The sanitized planner CLI itself is still built (build/release/planner) as
+# a local repro artifact.
+cmds:
+  - cmd: /mayhem/build/fuzz_planner
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/planner/testsuite
